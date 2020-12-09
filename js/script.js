@@ -23,19 +23,22 @@ var quotes = [
     {
         quote: "An adversary is more hurt by desertion than by slaughter.",
         source: "Vegetius",
-        citation: "Epitoma rei militaris"
+        citation: "Epitoma rei militaris",
+        year: "4th Cent. B.C."
     },
     
     {
         quote: "Few men are born brave, many become so through training and force of discipline.",
         source: "Vegetius",
-        citation: "Epitoma rei militaris"
+        citation: "Epitoma rei militaris",
+        year: "4th Cent. B.C."
     },
     
     {
         quote: "Let him who desires peace prepare for war.",
         source: "Vegetius",
-        citation: "Epitoma rei militaris"
+        citation: "Epitoma rei militaris",
+        year: "4th Cent. B.C."
     },
     
     {
@@ -64,14 +67,14 @@ var quotes = [
   
     {
         quote: "It is the brave man's part to live with glory, or with glory die.",
-        source: "Sophacles",
-        citation: ""
+        source: "Sophacles"
     },
   
     {
         quote: "The outcome corresponds less to expectations in war than in any other case whatsoever.",
         source: "Livy",
-        citation: "History of Rome"
+        citation: "History of Rome",
+        year: "29 B.C."
     },
   
     {
@@ -90,14 +93,12 @@ var quotes = [
         quote: "He who knows when he can fight and when he cannot will be victorious.",
         source: "Sun Tzu",
         citation: "The Art of War"
-  
     },
   
     {
         quote: "In war, numbers alone confer no advantage. Do not advance relying on sheer military power.",
         source: "Sun Tzu",
         citation: "The Art of War"
-  
     },
   
     {
@@ -133,7 +134,8 @@ var quotes = [
     {
         quote: "A wise man in times of peace prepares for war.",
         source: "Horace",
-        citation: "Satires"
+        citation: "Satires",
+        year: "35 B.C."
     },
   
     {
@@ -230,7 +232,12 @@ var quotes = [
 
     if(randQuote.citation)
     {
-    html += `<span class="citation">${randQuote.citation}</span>`
+        html += `<span class="citation">${randQuote.citation}</span>`
+    }
+
+    if(randQuote.year)
+    {
+        html += `<span class="year">${randQuote.year}</span>`
     }
 
     document.getElementById("quote-box").innerHTML = html;
