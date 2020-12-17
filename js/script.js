@@ -3,22 +3,18 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
+// To-Do List:
+    // Need to add own comments about project (Look at project information to see what is needed)
+    // Fix color changing
+    // add extra properties to a couple of the quotes, context?, genre?, etc.
 
-
-// My solution starts at 201, sorry got a little carried away with the quotes.
-
-// to do:
-    // finish finding citations for quotes/ reduce number of quotes?
-    // figure out why random is undefined in the print-quote function
+// My solution starts at 203, sorry got a little carried away with the quotes.
 
 /*** 
  * `quotes` array 
 ***/
 
-var quotes = [
+const quotes = [
 
     {
         quote: "An adversary is more hurt by desertion than by slaughter.",
@@ -202,30 +198,42 @@ var quotes = [
         source: "Onosander"
     }
   
-  ];
+];
+
+/***
+ * `getRandomColor` function
+***/
+
+function changeBackgroundColor()    // assigns random color to background-color property of the body
+{
+    let r = Math.floor(Math.random() * 255);
+    let g = Math.floor(Math.random() * 255);
+    let b = Math.floor(Math.random() * 255);
+    let quoteContainer = document.getElementById("body");
+
+    quoteContainer.style.backgroundColor = ` rgb(${r}, ${g}, ${b})`;  
+    return quoteContainer.style.backgroundColor;
+}
   
-  /***
-   * `getRandomQuote` function
-  ***/
+/***
+* `getRandomQuote` function
+***/
   
-  // remember to change to return quote object rather than quote property
-  
-  function getRandomQuote()
-  {
+function getRandomQuote()    // Gets a random uqote from the quote array
+{
     let random = Math.floor(Math.random() * quotes.length);
     randomQuote = quotes[random];
   
-    return randomQuote;
-    
-  }
+    return randomQuote;   
+}
   
-  /***
-   * `printQuote` function
-  ***/
+/***
+* `printQuote` function
+***/
   
-  function printQuote()
-  {
-    const randQuote = getRandomQuote(quotes);
+function printQuote()    // Prints the quote and all relevent info to the web page
+{
+    let randQuote = getRandomQuote(quotes);
     
     let html = `<p class="quote">${randQuote.quote}</p>
         <p class="source">${randQuote.source}`;
@@ -242,13 +250,16 @@ var quotes = [
 
     document.getElementById("quote-box").innerHTML = html;
     
-  }
+}
+
+// timer, calls the printQuote and changes background-color every 8 sec
+
+let quoteTimer = setInterval(printQuote, 8000, quotes);
+let colorTimer = setInterval(changeBackgroundColor, 8000);
   
-  printQuote(quotes);
+/***
+* click event listener for the print quote button
+* DO NOT CHANGE THE CODE BELOW!!
+***/
   
-  /***
-   * click event listener for the print quote button
-   * DO NOT CHANGE THE CODE BELOW!!
-  ***/
-  
-  document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('load-quote').addEventListener("click", printQuote, false);
