@@ -3,11 +3,6 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// To-Do List:
-    // Need to add more comments throughout project(?) (Look at project information to see what is needed)
-    // add extra properties to a couple of the quotes, tags
-        // strategy, character
-
 // My solution starts at 203, sorry got a little carried away with the quotes.
 
 /*** 
