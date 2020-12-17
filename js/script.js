@@ -6,7 +6,7 @@ project 1 - A Random Quote Generator
 // To-Do List:
     // Need to add own comments about project (Look at project information to see what is needed)
     // Fix color changing
-    // add extra properties to a couple of the quotes, context?, genre?, etc.
+    // add extra properties to a couple of the quotes, tags?, context?, genre?, etc.
 
 // My solution starts at 203, sorry got a little carried away with the quotes.
 
