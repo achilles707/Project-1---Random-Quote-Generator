@@ -272,15 +272,20 @@ function printQuote()    // Prints the quote and all relevent info to the web pa
         html += `<span class="tag">${randQuote.tag}</span>`
     }
 
+    html += `</p>`
+
     document.getElementById("quote-box").innerHTML = html;
-    
+    changeBackgroundColor();
+
+    // reset timer when button is pushed
+    clearInterval(quoteTimer);
+
 }
 
 // timer, calls the printQuote and changes background-color every 8 sec
 
 let quoteTimer = setInterval(printQuote, 8000, quotes);
-let colorTimer = setInterval(changeBackgroundColor, 8000);
-  
+
 /***
 * click event listener for the print quote button
 * DO NOT CHANGE THE CODE BELOW!!
